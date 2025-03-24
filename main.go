@@ -1,6 +1,20 @@
 package main
 
+import "fmt"
+
 func main() {
+
+	//Ponteiros
+
+	x := 10
+	y := &x
+
+	fmt.Println(x, *y) // quando coloco asterisco na frente do Y estou me referindo ao VALOR dela
+	fmt.Println(&x, y) // quando coloco o & na frente do X estou me referindo ao endereço dela, neste caso o Y já é o endereço de X
+
+	testandoPonteiros(&x, y)
+	fmt.Println(x, *y)
+	fmt.Println(&x, y)
 
 	// Exercicio 1
 	/*arr := [2]int{6, 3}
@@ -36,4 +50,8 @@ func main() {
 	}
 	fmt.Println(sublistaMenor, sublistaMaior)*/
 
+}
+
+func testandoPonteiros(x *int, y *int) {
+	*x = 20
 }
